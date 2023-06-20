@@ -26,7 +26,7 @@ import java.time.Month;
 import java.time.ZonedDateTime;
 import java.util.ResourceBundle;
 
-/** This class is a controller for the login menu.
+/** This class is the controller for the login menu.
  * @author James Wilson
  */
 public class ReportsMenuController implements Initializable {

@@ -31,7 +31,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/** This class is a controller for the main menu.
+/** This class is the controller for the main menu.
  * @author James Wilson
  */
 public class MainMenuController implements Initializable {

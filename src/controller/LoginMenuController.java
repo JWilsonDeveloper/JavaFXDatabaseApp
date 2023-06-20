@@ -22,7 +22,7 @@ import java.time.ZonedDateTime;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-/** This class is a controller for the login menu.
+/** This class is the controller for the login menu.
  * @author James Wilson
  */
 public class LoginMenuController implements Initializable {
