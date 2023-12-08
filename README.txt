@@ -1,5 +1,5 @@
 Application Title: JavaFXDatabaseApp
-Application Purpose: This program is a GUI-based scheduling desktop application, allowing its users to manage customers and appointments, as well as generate and review reports. It interfaces with a MySQL database in which the supporting information is stored.
+Application Purpose: This program is a GUI-based scheduling desktop application, allowing its users to manage customers and appointments, as well as generate and review reports. It creates and interfaces with a SQL database.
 
 Author: James Wilson
 Email: jwi3581@wgu.edu
@@ -11,6 +11,7 @@ JDK Version: Java SE 17.0.5
 JavaFX Version: JavaFX-SDK-17.0.1
 
 Directions:
+• Download the JAR 'JavaFXDatabaseApp.jar' from the root folder of this repository.
 • Launch the program.
 • Type in your username and password at the login screen. (Username: "test", Password: "test")
 • Click on the button labeled "Submit".
