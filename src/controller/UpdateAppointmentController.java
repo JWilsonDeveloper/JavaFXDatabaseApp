@@ -33,7 +33,7 @@ public class UpdateAppointmentController implements Initializable {
     Stage stage;
     Parent scene;
     Customer selectedCustomer;
-    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("M/dd/yyyy");
+    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
     // This variable is needed for Time.getAvailablesTimes().
     // When updating an appointment, the previously chosen start time needs to be recorded.
