@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS `contacts` (
+  `Contact_ID` int NOT NULL AUTO_INCREMENT,
+  `Contact_Name` varchar(50) DEFAULT NULL,
+  `Email` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`Contact_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS `appointments` (
+  `Appointment_ID` int NOT NULL AUTO_INCREMENT,
+  `Title` varchar(50) DEFAULT NULL,
+  `Description` varchar(50) DEFAULT NULL,
+  `Location` varchar(50) DEFAULT NULL,
+  `Type` varchar(50) DEFAULT NULL,
+  `Start` datetime DEFAULT NULL,
+  `End` datetime DEFAULT NULL,
+  `Create_Date` datetime DEFAULT NULL,
+  `Created_By` varchar(50) DEFAULT NULL,
+  `Last_Update` timestamp NULL DEFAULT NULL,
+  `Last_Updated_By` varchar(50) DEFAULT NULL,
+  `Customer_ID` int NOT NULL,
+  `User_ID` int NOT NULL,
+  `Contact_ID` int NOT NULL,
+  PRIMARY KEY (`Appointment_ID`),
+  KEY `fk_customer_id_idx` (`Customer_ID`),
+  KEY `fk_user_id_idx` (`User_ID`),
+  KEY `fk_contact_id_idx` (`Contact_ID`),
+  CONSTRAINT `fk_contact_id` FOREIGN KEY (`Contact_ID`) REFERENCES `contacts` (`Contact_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_customer_id` FOREIGN KEY (`Customer_ID`) REFERENCES `customers` (`Customer_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_user_id` FOREIGN KEY (`User_ID`) REFERENCES `users` (`User_ID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
