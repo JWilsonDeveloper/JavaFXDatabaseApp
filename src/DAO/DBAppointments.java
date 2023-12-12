@@ -228,13 +228,25 @@ public class DBAppointments {
         // Initialize numAppts
         int numAppts = 0;
         // Get current year
-        String thisYear = String.valueOf(Year.now());
+        String startYear = String.valueOf(Year.now());
+        String endYear;
+        int startMonth = month.getValue();
+        int endMonth;
+        if(startMonth == 12) {
+            // Go into next year if month is December
+            endMonth = 1;
+            endYear = String.valueOf(Year.now().plusYears(1));
+        }
+        else {
+            endMonth = month.getValue() + 1;
+            endYear = startYear;
+        }
 
         // Count the number of appointments of a specified type that take place between the beginning and the end of a specified month
         String sql = "SELECT Count(Appointment_ID) FROM client_schedule.appointments WHERE Start >=? AND End <=? AND Type=?";
         PreparedStatement ps = JDBC.connection.prepareStatement(sql);
-        ps.setString(1, thisYear + "-" + month.getValue() + "-01 00:00:00");
-        ps.setString(2, thisYear + "-" + (month.getValue() + 1) + "-01 00:00:00");
+        ps.setString(1, startYear + "-" + startMonth + "-01 00:00:00");
+        ps.setString(2, endYear + "-" + endMonth + "-01 00:00:00");
         ps.setString(3, type);
         ResultSet rs = ps.executeQuery();
         while(rs.next()){
