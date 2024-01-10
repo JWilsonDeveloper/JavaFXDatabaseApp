@@ -1,6 +1,7 @@
 package DAO;
 
 import com.company.Main;
+import io.github.pixee.security.BoundedLineReader;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -99,7 +100,7 @@ public abstract class JDBC {
             String line;
             StringBuilder statement = new StringBuilder();
 
-            while ((line = reader.readLine()) != null) {
+            while ((line = BoundedLineReader.readLine(reader, 5_000_000)) != null) {
                 // If line is not empty and doesn't start with '--', add it to the statement
                 if (!line.trim().isEmpty() && !line.trim().startsWith("--")) {
                     statement.append(line);
