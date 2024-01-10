@@ -199,7 +199,7 @@ public class CreateAppointmentController implements Initializable {
         eMsg = error.appendMsg(eMsg, startTimeComboBox.getValue(), "Start time");
 
         // If there are no empty fields
-        if (eMsg.equals("")){
+        if ("".equals(eMsg)){
             // Get start and end ZonedDateTimes from the start date and time fields
             ZonedDateTime startLocalZdt = ZonedDateTime.of(startDate, startTime, ZoneId.systemDefault());
             ZonedDateTime endLocalZdt = startLocalZdt.plus(1, ChronoUnit.HOURS);

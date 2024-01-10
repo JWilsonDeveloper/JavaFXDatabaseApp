@@ -134,7 +134,7 @@ public abstract class JDBC {
             ResultSet rs = metaData.getCatalogs();
             while (rs.next()) {
                 String dbName = rs.getString("TABLE_CAT");
-                if(dbName.equals(databaseName)){
+                if(databaseName.equals(dbName)){
                     exists = true;
                     break;
                 }

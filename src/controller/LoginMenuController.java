@@ -89,7 +89,7 @@ public class LoginMenuController implements Initializable {
             // Check if the username or password fields are empty.
             String username = usernameTxt.getText();
             String password = passwordTxt.getText();
-            if(username.equals("") || password.equals("")) {
+            if("".equals(username) || "".equals(password)) {
                 loginMsgTxt.setText(myRB.getString("PleaseEnterAUsernameAndPassword"));
             }
             else {

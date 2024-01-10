@@ -117,7 +117,7 @@ public class CreateCustomerController implements Initializable {
         eMsg = error.appendMsg(eMsg, firstLevelDivComboBox.getValue(), "First level division");
 
         // If there are no empty fields...
-        if (eMsg.equals("")){
+        if ("".equals(eMsg)){
             // Add customer
             rowsAffected = DBCustomers.addCustomer(name, address, postal, phone, fld);
         }
